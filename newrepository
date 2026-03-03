@@ -1,1 +1,23 @@
 
+# Function to read all items in the list
+def read_items():
+    print("Current items in the list:")
+    for i, item in enumerate(items, start=1):
+        print(f"{i}. {item}")
+
+# Function to update an existing item by index
+def update_item(index, new_value):
+    if 0 <= index < len(items):
+        old_value = items[index]
+        items[index] = new_value
+        print(f"Item '{old_value}' updated to '{new_value}'. Current list: {items}")
+    else:
+        print("Invalid index. No item updated.")
+
+# Function to delete an item by index
+def delete_item(index):
+    if 0 <= index < len(items):
+        removed_item = items.pop(index)
+        print(f"Item '{removed_item}' removed. Current list: {items}")
+    else:
+        print("Invalid index. No item deleted.")
